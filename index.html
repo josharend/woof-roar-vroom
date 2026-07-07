@@ -213,6 +213,7 @@
   }
   #btnPups{ background:linear-gradient(#FF7B7F, var(--cherry)); }
   #btnDinos{ background:linear-gradient(#5BC97E, var(--jungle-dk)); }
+  #btnAnimals{ background:linear-gradient(#C89B6C, #8F6A3F); }
   #btnTrucks{ background:linear-gradient(#F2A541, #D97E1E); }
   #btnDiggers{ background:linear-gradient(#FFD23F, #E0A200); }
   #btnTrains{ background:linear-gradient(#7B8CDE, #4A5AB8); }
@@ -274,6 +275,97 @@
   #bronto{ font-size:20vmin; left:42%; bottom:14%; }
   #egg{ font-size:11vmin; left:30%; bottom:6%; }
   #egg .baby{ font-size:10vmin; }
+
+  /* ---------- ANIMALS ---------- */
+  #animals .ground{ height:36%; }
+  #animals.r-jungle{ background:linear-gradient(#9BE29B, #4CAF6D 60%); }
+  #animals.r-jungle .ground{ background:linear-gradient(#3E9B52, #2E7A40); }
+  #animals.r-savanna{ background:linear-gradient(#FFE3A0, #F2B95C 60%); }
+  #animals.r-savanna .ground{ background:linear-gradient(#E0B368, #C08F42); }
+  #animals.r-arctic{ background:linear-gradient(#D8F0FF, #A8D8F0 60%); }
+  #animals.r-arctic .ground{ background:linear-gradient(#F4FAFF, #C6E2F2); }
+  #animals.r-forest{ background:linear-gradient(#BDE8C8, #7CC98E 60%); }
+  #animals.r-forest .ground{ background:linear-gradient(#5B8C4A, #437036); }
+  #regionTabs{
+    position:absolute; top:14vmin; left:50%; transform:translateX(-50%);
+    z-index:15; display:flex; gap:2vmin;
+  }
+  .rtab{
+    width:13vmin; height:13vmin; min-width:56px; min-height:56px;
+    border:none; border-radius:50%; cursor:pointer;
+    background:rgba(255,255,255,.88);
+    font-size:6.5vmin; line-height:1;
+    box-shadow:0 .8vmin 0 rgba(0,0,0,.15);
+    opacity:.65;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .rtab.active{
+    opacity:1; transform:scale(1.1);
+    box-shadow:0 0 0 .8vmin #FFD23F, 0 .8vmin 0 rgba(0,0,0,.15);
+  }
+  .animal{ font-size:15vmin; }
+
+  /* animal reaction moves */
+  .char.act-flip{ animation:aFlip .9s ease-in-out; }
+  @keyframes aFlip{
+    0%{ transform:translateY(0) rotate(0); }
+    50%{ transform:translateY(-14vmin) rotate(180deg); }
+    100%{ transform:translateY(0) rotate(360deg); }
+  }
+  .char.act-fly{ animation:aFly 1.2s ease-in-out; }
+  @keyframes aFly{
+    0%,100%{ transform:translate(0,0) rotate(0); }
+    40%{ transform:translate(6vmin,-20vmin) rotate(-12deg); }
+    70%{ transform:translate(-4vmin,-15vmin) rotate(8deg); }
+  }
+  .char.act-slither{ animation:aSlither .9s ease-in-out; }
+  @keyframes aSlither{
+    0%,100%{ transform:translateX(0) skewX(0); }
+    25%{ transform:translateX(-5vmin) skewX(-12deg); }
+    50%{ transform:translateX(4vmin) skewX(10deg); }
+    75%{ transform:translateX(-3vmin) skewX(-8deg); }
+  }
+  .char.act-pounce{ animation:aPounce .7s ease-out; }
+  @keyframes aPounce{
+    0%{ transform:translate(0,0) scale(1); }
+    35%{ transform:translate(-3vmin,-6vmin) scale(1.15); }
+    65%{ transform:translate(-8vmin,0) scale(1.05,.9); }
+    100%{ transform:translate(0,0) scale(1); }
+  }
+  .char.act-chest{ animation:aChest .7s ease-in-out; }
+  @keyframes aChest{
+    0%,100%{ transform:scale(1); }
+    20%,60%{ transform:scale(1.15,1.08); }
+    40%,80%{ transform:scale(.95,1); }
+  }
+  .char.act-stretch{ animation:aStretch 1.1s ease-in-out; transform-origin:50% 100%; }
+  @keyframes aStretch{
+    0%,100%{ transform:scaleY(1); }
+    45%,65%{ transform:scaleY(1.45); }
+  }
+  .char.act-dash{ animation:aDash 1s ease-in-out; }
+  @keyframes aDash{
+    0%,100%{ transform:translateX(0) scale(1,1); }
+    40%{ transform:translateX(24vmin) scale(1.08,.9); }
+    60%{ transform:translateX(24vmin) scale(1,1); }
+  }
+  .char.act-slide{ animation:aSlide 1.3s ease-in-out; }
+  @keyframes aSlide{
+    0%,100%{ transform:rotate(0) translateX(0); }
+    25%{ transform:rotate(76deg) translateX(2vmin); }
+    60%{ transform:rotate(76deg) translateX(18vmin); }
+    85%{ transform:rotate(0) translateX(4vmin); }
+  }
+  .char.act-spinroll{ animation:aSpin 1s ease-in-out; }
+  @keyframes aSpin{
+    0%,100%{ transform:rotate(0) translateX(0); }
+    50%{ transform:rotate(360deg) translateX(8vmin); }
+  }
+  .char.act-tilt{ animation:aTilt 1.4s ease-in-out; }
+  @keyframes aTilt{
+    0%,100%{ transform:rotate(0); }
+    25%,70%{ transform:rotate(-24deg) translateY(-2vmin); }
+  }
 
   /* ---------- TRUCKS ---------- */
   #trucks{ background:linear-gradient(#FFD9A0, #FFB86B 60%); }
@@ -742,6 +834,7 @@
     <div id="worlds">
       <button class="worldBtn" id="btnPups"><span class="big">🐶</span>PUPS!</button>
       <button class="worldBtn" id="btnDinos"><span class="big">🦖</span>DINOS!</button>
+      <button class="worldBtn" id="btnAnimals"><span class="big">🦁</span>ANIMALS!</button>
       <button class="worldBtn" id="btnTrucks"><span class="big">🛻</span>TRUCKS!</button>
       <button class="worldBtn" id="btnDiggers"><span class="big">🚜</span>DIGGERS!</button>
       <button class="worldBtn" id="btnTrains"><span class="big">🚂</span>TRAINS!</button>
@@ -784,6 +877,19 @@
     <button class="char" id="trex" aria-label="t-rex">🦖</button>
     <button class="char" id="bronto" aria-label="long neck dino" style="animation-delay:-1.2s;">🦕</button>
     <button class="char" id="egg" aria-label="dino egg">🥚</button>
+  </section>
+
+  <!-- ANIMALS -->
+  <section id="animals" class="scene r-jungle">
+    <button class="sun" aria-label="sun"></button>
+    <div class="ground"></div>
+    <div id="regionTabs">
+      <button class="rtab active" data-region="jungle" aria-label="jungle animals">🌴</button>
+      <button class="rtab" data-region="savanna" aria-label="savanna animals">🦁</button>
+      <button class="rtab" data-region="arctic" aria-label="arctic animals">❄️</button>
+      <button class="rtab" data-region="forest" aria-label="forest animals">🌲</button>
+    </div>
+    <div id="animalField"></div>
   </section>
 
   <!-- TRUCKS -->
@@ -1048,6 +1154,29 @@
     piano:  function(){ [262,330,392,523].forEach(function(f,i){ tone(f,0,.4,'triangle',.18,i*.12); tone(f*3,0,.1,'sine',.04,i*.12); }); },
     sax:    function(){ vib(233,8,5,.65,'sawtooth',.15); vib(311,8,5,.5,'sawtooth',.13,.55); },
     violin: function(){ vib(440,9,6,.7,'sawtooth',.1); vib(523,9,6,.55,'sawtooth',.09,.6); },
+    bellow: function(){ vib(170,14,4,.8,'triangle',.24); tone(120,90,.5,'triangle',.15,.2); },
+    monkey: function(){ [500,620,760].forEach(function(f,i){ tone(f,f*1.35,.12,'square',.16,i*.15); }); },
+    squawk: function(){ tone(1300,700,.14,'sawtooth',.16); nz(.1,.12,3000); tone(1450,800,.16,'sawtooth',.14,.22); },
+    hiss:   function(){ nz(.7,.2,7000); },
+    tiger:  function(){ vib(95,18,8,.8,'sawtooth',.28); },
+    eleph:  function(){ tone(350,950,.35,'sawtooth',.22); tone(950,550,.32,'sawtooth',.2,.36); },
+    chest:  function(){ for(var i=0;i<4;i++){ tone(110,60,.1,'sine',.35,i*.14); nz(.04,.15,800,i*.14); } },
+    lion:   function(){ tone(130,45,1.2,'sawtooth',.3); nz(1.1,.13,250); },
+    munch:  function(){ for(var i=0;i<3;i++) nz(.09,.25,1200,i*.22); },
+    neigh:  function(){ vib(800,120,11,.55,'sawtooth',.13); tone(600,250,.4,'sawtooth',.1,.15); },
+    snort:  function(){ nz(.18,.3,350); tone(90,60,.2,'square',.24); },
+    hippo:  function(){ tone(95,65,.35,'sawtooth',.28); tone(80,55,.4,'sawtooth',.26,.4); },
+    chirp:  function(){ tone(1100,1500,.09,'sine',.16); tone(1200,1600,.09,'sine',.16,.15); },
+    peng:   function(){ [900,1100,850].forEach(function(f,i){ tone(f,f*1.3,.09,'square',.12,i*.13); }); },
+    polar:  function(){ vib(70,14,7,.9,'sawtooth',.3); },
+    seal:   function(){ tone(420,260,.12,'sawtooth',.2); tone(420,260,.12,'sawtooth',.2,.18); nz(.05,.15,2000,.36); },
+    howl:   function(){ tone(350,750,.5,'sine',.18); vib(700,20,5,.9,'sine',.16,.45); },
+    jingle: function(){ [2000,2400,2000,2600].forEach(function(f,i){ tone(f,0,.15,'triangle',.09,i*.1); }); },
+    hoot:   function(){ tone(420,380,.22,'sine',.24); tone(420,340,.32,'sine',.24,.3); },
+    bear:   function(){ vib(85,16,7,.8,'sawtooth',.26); },
+    foxSong:function(){ [900,1200,900,1200,1500].forEach(function(f,i){ tone(f,0,.08,'square',.13,i*.09); }); },
+    chatter:function(){ for(var i=0;i<6;i++) tone(1600,1300,.04,'square',.09,i*.07); },
+    chitter:function(){ for(var i=0;i<5;i++) tone(1100,900,.05,'square',.11,i*.08); },
     whistle:function(){ vib(660,18,6,.55,'triangle',.18); vib(880,22,6,.55,'triangle',.13); },
     dingding:function(){ for(var i=0;i<5;i++) tone(i%2?900:1250,0,.09,'square',.13,i*.16); },
     whale:  function(){ vib(200,40,2.5,1.2,'sine',.22); tone(300,140,.9,'sine',.1,.1); },
@@ -1185,6 +1314,7 @@
   }
   nav('#btnPups','pups',S.bark);
   nav('#btnDinos','dinos',S.roar);
+  nav('#btnAnimals','animals',S.lion);
   nav('#btnTrucks','trucks',S.rev);
   nav('#btnDiggers','diggers',S.putt);
   nav('#btnTrains','trains',S.whistle);
@@ -1233,8 +1363,14 @@
 
   /* ============ PUPS ============ */
   $$('[data-pup]').forEach(function(pup){
+    var lbl = pup.getAttribute('aria-label') || '';
     tap(pup, function(e){
       S.bark();
+      if(lbl.indexOf('fire') > -1){
+        tone(960,0,.15,'triangle',.11,.3); tone(640,0,.18,'triangle',.11,.5);
+      } else if(lbl.indexOf('police') > -1){
+        vib(1900,90,14,.4,'sine',.09,.3);
+      }
       replay(pup, 'jump');
       burst(e.clientX, e.clientY, ['❤️','⭐'], 7);
     });
@@ -1279,8 +1415,8 @@
     burst(e.clientX, e.clientY, ['💥','⭐'], 8);
   });
   tap($('#bronto'), function(e, el){
-    S.happy();
-    replay(el, 'jump');
+    S.bellow();
+    replay(el, 'act-stretch');
     burst(e.clientX, e.clientY, ['🌿','💚'], 7);
   });
   tap($('#volcano'), function(e, el){
@@ -1311,6 +1447,86 @@
         eggTaps = 0; eggBusy = false;
       }, 5000);
     }
+  });
+
+  /* ============ ANIMALS ============ */
+  var REGIONS = {
+    jungle: [
+      { em:'🐒', snd:'monkey', act:'act-flip',    fx:['🍌','⭐'] },
+      { em:'🦜', snd:'squawk', act:'act-fly',     fx:['🪶','⭐'] },
+      { em:'🐍', snd:'hiss',   act:'act-slither', fx:['💨'] },
+      { em:'🐯', snd:'tiger',  act:'act-pounce',  fx:['💥','⭐'] },
+      { em:'🐘', snd:'eleph',  act:'stomp', shake:true, fx:['💦','⭐'] },
+      { em:'🦍', snd:'chest',  act:'act-chest',   fx:['💥','🍃'] }
+    ],
+    savanna: [
+      { em:'🦁', snd:'lion',   act:'wiggle', shake:true, fx:['⭐','💥'] },
+      { em:'🦒', snd:'munch',  act:'act-stretch', fx:['🍃'] },
+      { em:'🦓', snd:'neigh',  act:'act-dash',    fx:['💨'] },
+      { em:'🦏', snd:'snort',  act:'act-pounce',  fx:['💨','💥'] },
+      { em:'🦛', snd:'hippo',  act:'jump',        fx:['💦'] },
+      { em:'🐆', snd:'chirp',  act:'act-dash',    fx:['💨','⭐'] }
+    ],
+    arctic: [
+      { em:'🐧', snd:'peng',   act:'act-slide',   fx:['❄️','✨'] },
+      { em:'🐻‍❄️', snd:'polar', act:'stomp', shake:true, fx:['❄️'] },
+      { em:'🦭', snd:'seal',   act:'act-chest',   fx:['💦','⭐'] },
+      { em:'🐺', snd:'howl',   act:'act-tilt',    fx:['🌙','✨'] },
+      { em:'🦌', snd:'jingle', act:'jump',        fx:['🔔','✨'] },
+      { em:'⛄', snd:'sparkle',act:'wiggle',      fx:['❄️','✨'] }
+    ],
+    forest: [
+      { em:'🦉', snd:'hoot',   act:'wiggle',      fx:['🍂'] },
+      { em:'🐻', snd:'bear',   act:'stomp', shake:true, fx:['🍯'] },
+      { em:'🦊', snd:'foxSong',act:'act-spinroll',fx:['🎶','⭐'] },
+      { em:'🐿️', snd:'chatter',act:'act-flip',    fx:['🌰'] },
+      { em:'🦝', snd:'chitter',act:'act-spinroll',fx:['✨'] },
+      { em:'🐰', snd:'boing',  act:'jump',        fx:['🥕','⭐'] }
+    ]
+  };
+  var REGION_SND = { jungle:'monkey', savanna:'lion', arctic:'howl', forest:'hoot' };
+  var SLOTS = [
+    { l:'6%',  b:'32%' }, { l:'38%', b:'35%' }, { l:'70%', b:'32%' },
+    { l:'10%', b:'5%'  }, { l:'42%', b:'4%'  }, { l:'72%', b:'7%'  }
+  ];
+  var animalScene = $('#animals'), animalField = $('#animalField');
+  function renderRegion(name){
+    ['r-jungle','r-savanna','r-arctic','r-forest'].forEach(function(c){ animalScene.classList.remove(c); });
+    animalScene.classList.add('r-' + name);
+    $$('#regionTabs .rtab').forEach(function(t){
+      t.classList.toggle('active', t.getAttribute('data-region') === name);
+    });
+    animalField.innerHTML = '';
+    REGIONS[name].forEach(function(a, i){
+      var slot = SLOTS[i];
+      var b = document.createElement('button');
+      b.className = 'char animal';
+      b.textContent = a.em;
+      b.style.left = slot.l;
+      b.style.bottom = slot.b;
+      b.style.animationDelay = (-i*0.4)+'s';
+      b.setAttribute('aria-label','animal');
+      animalField.appendChild(b);
+      b.addEventListener('pointerdown', function(e){
+        e.preventDefault(); e.stopPropagation();
+        ctx();
+        S[a.snd]();
+        replay(b, a.act);
+        if(a.shake) replay(animalScene, 'shake');
+        burst(e.clientX, e.clientY, a.fx, 7);
+        star();
+      });
+    });
+  }
+  renderRegion('jungle');
+  $$('#regionTabs .rtab').forEach(function(t){
+    t.addEventListener('pointerdown', function(e){
+      e.preventDefault(); e.stopPropagation();
+      ctx();
+      var name = t.getAttribute('data-region');
+      S[REGION_SND[name]]();
+      renderRegion(name);
+    });
   });
 
   /* ============ TRUCKS ============ */
@@ -1601,18 +1817,18 @@
   $('#btnSpace').addEventListener('pointerdown', newFindRound);
 
   /* ============ FARM ============ */
-  function critter(sel, snd, emojis){
+  function critter(sel, snd, emojis, act){
     tap($(sel), function(e, el){
       snd();
-      replay(el, Math.random() < 0.5 ? 'jump' : 'wiggle');
+      replay(el, act || (Math.random() < 0.5 ? 'jump' : 'wiggle'));
       burst(e.clientX, e.clientY, emojis, 7);
     });
   }
-  critter('#cow', S.moo, ['⭐','🤍']);
-  critter('#pig', S.oink, ['💗','⭐']);
+  critter('#cow', S.moo, ['⭐','🤍'], 'jump');
+  critter('#pig', S.oink, ['🟤','💦'], 'act-spinroll');
   critter('#hen', S.cluck, ['🥚','⭐']);
-  critter('#sheep', S.baa, ['🤍','☁️']);
-  critter('#duck', S.quack, ['💦','⭐']);
+  critter('#sheep', S.baa, ['☁️','🤍'], 'act-spinroll');
+  critter('#duck', S.quack, ['💦','🪶'], 'act-fly');
   var farmSounds = [S.moo, S.oink, S.cluck, S.baa, S.quack];
   tap($('#barn'), function(e, el){
     farmSounds[Math.floor(Math.random()*farmSounds.length)]();
