@@ -1,0 +1,17 @@
+{
+  "name": "Woof! Roar! Vroom!",
+  "short_name": "WoofRoar",
+  "description": "A tap-and-play game for toddlers: pups, dinos, trucks, and more.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#6FC7F5",
+  "theme_color": "#6FC7F5",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
