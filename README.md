@@ -12,6 +12,7 @@ Install it like an app: open the link in Chrome on a phone → menu → **Add to
 |---|---|
 | 🐶 Pups | Rescue puppies, fire truck, kitty-in-a-tree rescue |
 | 🦖 Dinos | Roaring T-Rex, erupting volcano, hatching egg |
+| 🦁 Animals | 4 regions (jungle/savanna/arctic/forest), 24 animals with unique calls + moves |
 | 🛻 Trucks | Monster trucks doing wheelies + a jump ramp |
 | 🚜 Diggers | Knock-down block tower, crane, dump truck |
 | 🚂 Trains | Steam train, crossing signal, tunnel |
@@ -22,6 +23,10 @@ Install it like an app: open the link in Chrome on a phone → menu → **Add to
 | 🎈 Pop! | Endless balloon popping |
 | 🥁 Music | 8 instruments + pentatonic xylophone |
 | 🎆 Boom! | Tap-anywhere fireworks |
+| 🎨 Paint! | Finger painting with rainbow brush |
+| 🐹 Whack! | Whack-a-mole, speeds up with levels (saved on device) |
+| 👹 Feed! | Feed the monster — burps every 5th snack |
+| 🏁 Race! | Tap-fast car race against the turtle |
 
 ## Tech
 
