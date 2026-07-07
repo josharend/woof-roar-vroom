@@ -36,3 +36,5 @@ vercel deploy --prod --yes
 ```
 
 When shipping changes, bump the `CACHE` version string in `sw.js` so installed clients pick up the update.
+
+Auto-deploys from `main` via the Vercel GitHub integration.
