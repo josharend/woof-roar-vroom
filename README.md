@@ -27,6 +27,10 @@ Install it like an app: open the link in Chrome on a phone → menu → **Add to
 | 🐹 Whack! | Whack-a-mole, speeds up with levels (saved on device) |
 | 👹 Feed! | Feed the monster — burps every 5th snack |
 | 🏁 Race! | Tap-fast car race against the turtle |
+| 🃏 Match! | Memory pairs, gets bigger with levels (saved on device) |
+| 🚚 Wash! | Scrub mud off to reveal a sparkling truck |
+| 🚪 Peek! | Peekaboo doors — a surprise + sound behind each |
+| 🦋 Catch! | Chase and catch fluttering butterflies |
 
 ## Tech
 
