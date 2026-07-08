@@ -1,4 +1,4 @@
-var CACHE = 'wrv-v8';
+var CACHE = 'wrv-v9';
 var ASSETS = [
   './',
   './index.html',
